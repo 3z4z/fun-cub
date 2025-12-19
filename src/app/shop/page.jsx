@@ -19,7 +19,8 @@ export const metadata = {
   description: "See our all products and get yours today!",
 };
 
-export default function ShopPage() {
+export default async function ShopPage() {
+  const products = await getProducts();
   return (
     <>
       <PageTitleComponent
@@ -32,7 +33,7 @@ export default function ShopPage() {
           <div className="col-span-3">
             <ShopHeaderComponent />
             <div className="mt-4">
-              <ProductsGridComponent getProducts={getProducts} />
+              <ProductsGridComponent products={products} />
             </div>
           </div>
         </div>
