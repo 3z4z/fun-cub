@@ -4,9 +4,11 @@ import ProductsGridComponent from "@/components/shop/ProductsGrid";
 import ShopSidebarComponent from "@/components/shop/Sidebar";
 import { container } from "@/utils/classNames";
 
+export const dynamic = "force-dynamic";
+
 const getProducts = async () => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/products`, {
-    cache: "force-cache",
+    // cache: "force-cache",
     next: {
       revalidate: 30,
     },
