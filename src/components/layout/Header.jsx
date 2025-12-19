@@ -11,8 +11,8 @@ export default function HeaderComponent() {
         </figure>
         <div className="flex flex-col">
           <p className="font-bold text-xl">
-            <span className="text-primary me-1">Kids</span>
-            <span className="text-secondary">Zone</span>
+            <span className="text-primary me-1">Fun</span>
+            <span className="text-secondary">Cub</span>
           </p>
           <small className="text-neutral/70">All in shop for kids</small>
         </div>

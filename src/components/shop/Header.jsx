@@ -5,7 +5,7 @@ export default function ShopHeaderComponent() {
         <input
           type="search"
           className="input"
-          placeholder="Search in Kids Zone"
+          placeholder="Search in Fun Cub"
         />
       </form>
       <form className="max-w-56 w-full">
