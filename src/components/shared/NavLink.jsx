@@ -9,12 +9,12 @@ export default function NavLink({
   className = "",
 }) {
   const pathName = usePathname();
-
-  const isActive = pathName ? pathName.startsWith(to) : false;
+  const isActive =
+    pathName && typeof to === "string" ? pathName.startsWith(to) : false;
 
   return (
     <Link
-      href={to}
+      href={to || "/"}
       className={`transition-all ${className?.trim() || ""} ${
         isActive ? active?.trim() : ""
       }`}

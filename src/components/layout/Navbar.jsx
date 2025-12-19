@@ -1,5 +1,3 @@
-"use client";
-
 import { LucideShoppingCart } from "lucide-react";
 import NavLink from "../shared/NavLink";
 export default function NavbarComponent() {
