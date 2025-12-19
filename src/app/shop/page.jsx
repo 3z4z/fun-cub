@@ -5,7 +5,7 @@ import ShopSidebarComponent from "@/components/shop/Sidebar";
 import { container } from "@/utils/classNames";
 
 const getProducts = async () => {
-  const res = await fetch(`${process.env.BASE_URL}/api/products`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/products`, {
     cache: "force-cache",
     next: {
       revalidate: 30,
