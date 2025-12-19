@@ -1,0 +1,42 @@
+import PageTitleComponent from "@/components/layout/PageTitle";
+import ShopHeaderComponent from "@/components/shop/Header";
+import ProductsGridComponent from "@/components/shop/ProductsGrid";
+import ShopSidebarComponent from "@/components/shop/Sidebar";
+import { container } from "@/utils/classNames";
+
+const getProducts = async () => {
+  const res = await fetch("http://localhost:3000/api/products", {
+    cache: "force-cache",
+    next: {
+      revalidate: 30,
+    },
+  });
+  return await res.json();
+};
+
+export const metadata = {
+  title: "All Products",
+  description: "See our all products and get yours today!",
+};
+
+export default function ShopPage() {
+  return (
+    <>
+      <PageTitleComponent
+        title={"See all products"}
+        subtitle={"Your favorite toys and educational items — explore & shop!"}
+      />
+      <main className={container}>
+        <div className="grid grid-cols-4 gap-8">
+          <ShopSidebarComponent />
+          <div className="col-span-3">
+            <ShopHeaderComponent />
+            <div className="mt-4">
+              <ProductsGridComponent getProducts={getProducts} />
+            </div>
+          </div>
+        </div>
+      </main>
+    </>
+  );
+}
