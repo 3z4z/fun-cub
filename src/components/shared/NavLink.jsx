@@ -2,7 +2,12 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export default function NavLink({ to, active, children, className }) {
+export default function NavLink({
+  to = "",
+  active = "",
+  children,
+  className = "",
+}) {
   const pathName = usePathname();
 
   const isActive = pathName ? pathName.startsWith(to) : false;
